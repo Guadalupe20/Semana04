@@ -1,0 +1,41 @@
+package edu.continental.listas;
+
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	ListView lista;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        lista= (ListView) findViewById(R.id.listaequipos);
+        equipos = new ArrayList <String> ();
+        equipos.add ("Perú");
+        equipos.add ("Argentina");
+        equipos.add ("Paraguay");
+        equipos.add ("Brasil");
+        equipos.add ("Colombia");
+        equipos.add ("Bolivia");
+        equipos.add ("Uruguay");
+        
+        ArrayAdapter<String> adapter= new
+        		ArrayAdapter<String>(this, android.R.simple_list_item_1, equipos);
+                
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}
